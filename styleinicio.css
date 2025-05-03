@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: url(img/cursor%20rosa.png),auto;
+}
+
+a{
+	cursor: url(img/cursor%20rosa%20seleccion.png), auto;
+} 
+
+body, html {
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Fondo detrás de todo el contenido */
+}
+
+.background-img {
+  width: 95%;
+  height: 110%;
+  object-fit: cover;
+  position: fixed; /* Hace que la imagen esté fija en el fondo */
+}
+
+.header {
+  position: absolute;
+  top: 90px; /* Ajusta según la distancia desde la parte superior */
+  right: 980px; /* Mueve el logo y el menú hacia la derecha */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align:left;
+  z-index: 1; /* Asegura que el logo y el menú estén por encima del fondo */
+}
+
+.logo {
+  max-width: 400px; /* Ajusta el tamaño del logo */
+ filter:  drop-shadow(1px 1px 10px black);
+	transition: all 300ms;
+}
+
+.logo:hover{
+transform: scale(1.15);
+}
+
+.menu {
+  margin-top: 70px;
+  margin-right: 110px;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+
+  
+}
+
+.menu ul li {
+  margin: 35px 0; /* Espacio entre cada item del menú */
+}
+
+.menu ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 70px;
+  transition: background-color 0.3s;
+}
+
+.menu ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+  color: palevioletred;
+}

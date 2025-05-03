@@ -1,0 +1,70 @@
+* {
+  cursor: url(img/cursor%20rosa.png),auto;
+}
+
+a{
+	cursor: url(img/cursor%20rosa%20seleccion.png), auto;
+}  
+
+body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            background-color: #ffdbe0;
+        }
+        .container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        video, canvas, img {
+            display: block;
+            margin: 10px auto;
+            max-width: 100%;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .overlay-selection {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .overlay-preview {
+            width: 140px;
+            height: 100px;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+        .overlay-preview:hover {
+            border-color: #000;
+        }
+		
+		.regresar {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+   z-index: 1000;
+}
+
+.regresar img {
+    width: 150px; /* Ajusta el tamaño según necesites */
+    height: auto; /* Mantiene la proporción */
+}
+		
+		body {
+    position: relative; /* Asegura que los elementos absolutos se posicionen respecto a la página */
+    padding-top: 120px; /* Ajusta este valor según el tamaño del botón para que no tape contenido */
+}
+
+button {
+    margin-top: 20px; /* Ajusta este valor según necesites */
+}

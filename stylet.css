@@ -1,0 +1,30 @@
+* {
+  cursor: url(img/cursor%20rosa.png),auto;
+}
+
+a{
+	cursor: url(img/cursor%20rosa%20seleccion.png), auto;
+}  
+
+img{
+	width: 700px;
+	height: auto;
+	max-width: 100%;
+		
+}
+		.regresar {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+   z-index: 1000;
+}
+
+.regresar img {
+    width: 150px; /* Ajusta el tamaño según necesites */
+    height: auto; /* Mantiene la proporción */
+
+.construccion {
+	width: 100px;
+	height: auto;
+	max-width: 50%;
+	}

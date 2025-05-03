@@ -1,0 +1,62 @@
+.container{
+	background:pink;
+	font-family: sans-serif;
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+.text{
+	color: white;
+	margin-bottom: 25px;
+	font-size: 20px;
+	letter-spacing: 2px;
+}
+
+.cargando{
+	width: 100%;
+	height: auto;
+	display: flex;
+	justify-content:center;
+	align-items: center;
+}
+
+.cargando .line-box{
+	padding: 2px;
+	width: 40%;
+	height: 20px;
+	border: 2px solid #9C225D;
+	border-radius: 20px;
+}
+
+.cargando .line-box .line{
+	height: 20px;
+	border-radius: 20px;
+	background: #ea899a;
+	animation: cargando 7s forwards cubic-bezier(0,0,0,0);
+	
+}
+
+@keyframes cargando{
+	0%{
+		width: 0%;
+	}
+	100%{
+		width: 100%;
+	}
+
+body{
+	background-color:blueviolet;
+	font-family: sans-serif;
+	cursor: url(img/cursor%20rosa.png),auto;
+}
+
+a{
+	cursor: url(img/cursor%20rosa%20seleccion.png), auto;
+} 

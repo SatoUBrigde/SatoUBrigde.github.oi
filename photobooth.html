@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photobooth</title>
+    <link rel="stylesheet" href="stylepb.css">
+</head>
+<body>
+	
+	<a href="inicio.html" class="regresar" >
+	 <img src="img/Boton%20regresar%20HBD%20Meli_Mesa%20de%20trabajo%201.png">
+</a>
+	
+	
+    <h2>Photobooth</h2>
+    <div class="container">
+        <video id="camera" autoplay></video>
+        <canvas id="preview" style="display:none;"></canvas>
+        <img id="photo" style="display:none;"/>
+        <img id="overlay" class="overlay" style="display:none;"/>
+    </div>
+    <button id="capture">Capturar</button>
+    <button id="retry" style="display:none;">Reintentar</button>
+    <button id="save" style="display:none;">Guardar</button>
+    <div class="overlay-selection">
+        
+		<img src="img/Overlay%201-02-02.png" class="overlay-preview" data-src= "img/Overlay%201-02.png" alt="Overlay 1">
+        
+		<img src="img/Overlay%202-03-03.png" class="overlay-preview" data-src="img/Overlay%202-03-03.png" alt="Overlay 2">
+    </div>
+    <script>
+        const video = document.getElementById('camera');
+        const canvas = document.getElementById('preview');
+        const photo = document.getElementById('photo');
+        const overlay = document.getElementById('overlay');
+        const captureBtn = document.getElementById('capture');
+        const retryBtn = document.getElementById('retry');
+        const saveBtn = document.getElementById('save');
+        
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(stream => video.srcObject = stream);
+        
+        document.querySelectorAll('.overlay-preview').forEach(img => {
+            img.addEventListener('click', () => {
+                overlay.src = img.dataset.src;
+                overlay.style.display = 'block';
+            });
+        });
+        
+        captureBtn.addEventListener('click', () => {
+            const context = canvas.getContext('2d');
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            context.drawImage(video, 0, 0);
+            if (overlay.src) context.drawImage(overlay, 0, 0, canvas.width, canvas.height);
+            photo.src = canvas.toDataURL('image/png');
+            photo.style.display = 'block';
+            video.style.display = 'none';
+            captureBtn.style.display = 'none';
+            retryBtn.style.display = 'inline';
+            saveBtn.style.display = 'inline';
+        });
+        
+        retryBtn.addEventListener('click', () => {
+            video.style.display = 'block';
+            photo.style.display = 'none';
+            captureBtn.style.display = 'inline';
+            retryBtn.style.display = 'none';
+            saveBtn.style.display = 'none';
+        });
+        
+        saveBtn.addEventListener('click', () => {
+            const link = document.createElement('a');
+            link.href = photo.src;
+            link.download = 'photo.png';
+            link.click();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+* {
+  cursor: url(img/cursor%20rosa.png),auto;
+}
+
+a{
+	cursor: url(img/cursor%20rosa%20seleccion.png), auto;
+}  
+
+div.gallery {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+.regresar {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+   z-index: 1000;
+}
+
+.regresar img {
+    width: 150px; /* Ajusta el tamaño según necesites */
+    height: auto; /* Mantiene la proporción */
+}
+
+body {
+    position: relative; /* Asegura que los elementos absolutos se posicionen respecto a la página */
+    padding-top: 120px; /* Ajusta este valor según el tamaño del botón para que no tape contenido */
+}
